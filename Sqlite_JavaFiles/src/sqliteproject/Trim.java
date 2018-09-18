@@ -12,7 +12,7 @@ public class Trim extends Function{
     @Override
     protected void xFunc() throws SQLException {
         if (args() != 2) {
-            throw new SQLException("Trim(date1,date2): Invalid argument count. Requires 2, but found " + args());
+            throw new SQLException("Trim(data1,data2): Invalid argument count. Requires 2, but found " + args());
         }
         String _new = value_text(0);
         String remover = value_text(1);

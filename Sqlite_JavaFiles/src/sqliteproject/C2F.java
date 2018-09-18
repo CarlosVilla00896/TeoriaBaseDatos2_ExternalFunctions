@@ -13,7 +13,9 @@ public class C2F extends Function {
             throw new SQLException("C2F(dato1): Invalid argument count. Requires 1, but found " + args());
         }
         int c = value_int(0);
+        int res = (int)((c * 1.8) + 32);
         result ((int)(c * 1.8) + 32);
+        System.out.println("Celsius: "+c+ " Fahrenheit: "+res);
     }
     
 }

@@ -10,16 +10,19 @@ public class CompareString extends Function{
     @Override
     protected void xFunc() throws SQLException {
         if (args() != 2) {
-            throw new SQLException("CompareString(dato1, dato2): Invalid argument count. Requires 2, but found " + args());
+            throw new SQLException("com.company.COMPARESTRING(date1,date2): Invalid argument count. Requires 2, but found " + args());
         }
-        String cadena1 = value_text(0);
-        String cadena2 = value_text(1);
-        if(cadena1.length() < cadena2.length())
-            result(-1);
-         else if(cadena1.equals(cadena2))
-            result(0);
-        else if(cadena1.length() > cadena2.length())
-            result(1);
-        result(9999999);
+        String primera = value_text(0);
+        String segunda = value_text(1);
+        int t=0;
+        if(primera.compareTo(segunda)==0){
+            t=0;
+        }
+        else if(primera.compareTo(segunda)<0){
+            t=-1;
+        }else if(primera.compareTo(segunda)>0){
+            t=1;
+        }
+        result(t);
     }
 }
